@@ -1,6 +1,6 @@
 ### Golang, GraphQL & Mongo Demo
 
-## Recipes
+## Ingredients
    - Golang version 1.7+ https://golang.org/
 
    - Glide https://github.com/Masterminds/glide
