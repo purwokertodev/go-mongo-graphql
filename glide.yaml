@@ -1,0 +1,5 @@
+package: github.com/wuryscamp/go-mongo-tutorial
+import:
+- package: gopkg.in/mgo.v2
+- package: github.com/graphql-go/graphql
+  version: v0.7.5
