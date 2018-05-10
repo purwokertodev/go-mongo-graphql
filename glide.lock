@@ -1,8 +1,21 @@
-hash: 5a04d6a8aae3a8cecb57fa084afd31de6c9d0cc203fd6cc6406ec065d6660ea6
-updated: 2018-05-10T22:31:42.030557565+07:00
+hash: 082174d9b302aec793251763434f126673341c1d1cf7cfe68dee5db6c3198683
+updated: 2018-05-11T01:46:17.460786821+07:00
 imports:
 - name: github.com/graphql-go/graphql
   version: 1e23489041ba90a66f317fe0deccb236a2fff3cb
+  subpackages:
+  - gqlerrors
+  - language/ast
+  - language/kinds
+  - language/lexer
+  - language/location
+  - language/parser
+  - language/printer
+  - language/source
+  - language/typeInfo
+  - language/visitor
+- name: github.com/graphql-go/handler
+  version: f0393b2c10daeebea900292b8e092e73475399d9
 - name: gopkg.in/mgo.v2
   version: 3f83fa5005286a7fe593b055f0d7771a7dce4655
   subpackages:

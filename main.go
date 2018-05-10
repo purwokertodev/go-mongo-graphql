@@ -1,9 +1,10 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"net/http"
+
+	"github.com/graphql-go/handler"
 
 	"github.com/purwokertodev/go-mongo-graphql/config"
 	"github.com/purwokertodev/go-mongo-graphql/internal/modules/profile/repository"
@@ -35,10 +36,22 @@ func main() {
 		fmt.Println(err)
 	}
 
-	http.HandleFunc("/graphql", func(w http.ResponseWriter, r *http.Request) {
-		result := profileSchema.ExecuteQuery(r.URL.Query().Get("query"), sc)
-		json.NewEncoder(w).Encode(result)
+	//Using http HandleFunc
+	// http.HandleFunc("/graphql", func(w http.ResponseWriter, r *http.Request) {
+	// 	result := profileSchema.ExecuteQuery(r.URL.Query().Get("query"), sc)
+	// 	json.NewEncoder(w).Encode(result)
+	// })
+
+	//Using GraphQL Handler
+
+	h := handler.New(&handler.Config{
+		Schema:   &sc,
+		Pretty:   true,
+		GraphiQL: true,
 	})
+
+	// serve HTTP
+	http.Handle("/graphql", h)
 
 	http.ListenAndServe(":8080", nil)
 }
